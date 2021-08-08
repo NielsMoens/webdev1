@@ -1,0 +1,8 @@
+.rainbow {
+    display: flex;
+}
+.rainbow .block {
+    background-color: #ddd;
+    width: 20px;
+    height: 20px;
+}
