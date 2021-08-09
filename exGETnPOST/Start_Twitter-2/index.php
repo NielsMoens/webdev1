@@ -35,9 +35,8 @@
 <body>
 <div class="container">
     <div class="messages">
-        <form>
+        <form action="api/addTweet.php" method="POST">
             <div class="message message-new">
-            
                 <div class="avatar">JD</div>
 
                 <div class="content">
