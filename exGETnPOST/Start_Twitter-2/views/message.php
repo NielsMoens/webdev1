@@ -1,6 +1,6 @@
 <?php
 $fullname= $item['first_name'] . $item['last_name'];
-$username= '@' . str_replace('', '_', strtolower($fullname));
+$username= '@' . str_replace(' ', '_', strtolower($fullname));
 $user_id = $item['user_id'];
 $message = $item['message'];
 $date = $item['created_on'];
