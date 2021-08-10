@@ -27,7 +27,9 @@
         echo '</nav>';
 
         //Ophalen huidige pagina
-        $current_page_id = $_GET['page_id'];
+
+        // ?? = shorty if
+        $current_page_id = $_GET['page_id'] ?? 1;
 
         $sql='select * from `pages` where `page_id`= :page_id' ;
         $pdo_statement = $db->prepare($sql);
@@ -36,17 +38,19 @@
         );
 
         //fetch an object instead of an array
-        $current_pages = $pdo_statement->fetchObject();
+        $current_page = $pdo_statement->fetchObject();
 
         //fyi: use -> to address things in an object
-//        print_r($current_pages->content);
+//        print_r($current_page);
 
+        $view= 'views/'. $current_page->template . '.php';
+        if(!file_exists($view)){
+            $view= 'views/page.php';
+        };
+        include $view;
     ?>
 
-    <h1><?= $current_pages->title;?></h1>
-    <div class="content">
-        <?= $current_pages->content; ?>
-    </div>
+
 
 </div>
 </body>
