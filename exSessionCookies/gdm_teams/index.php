@@ -22,6 +22,7 @@ $teams =  $pdo_statement->fetchAll();
         <div class="user">
             Hi, <?= $user->firstname; ?>
             <div class="initials"><?= $user->firstname[0] . $user->lastname[0]; ?></div>
+            <a href="logout.php">Log out</a>
         </div>
     </header>
     <section class="chat_list">

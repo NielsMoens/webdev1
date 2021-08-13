@@ -28,7 +28,6 @@
 
         //Ophalen huidige pagina
 
-        // ?? = shorty if
         $current_page_id = $_GET['page_id'] ?? 1;
 
         $sql='select * from `pages` where `page_id`= :page_id' ;
