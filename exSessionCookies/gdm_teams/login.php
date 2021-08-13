@@ -12,7 +12,7 @@
         $user = $pdo_statement->fetchObject();
 
         // check password and email fom db
-        if($user && $user->password == $password_from_form){
+        if($user && password_verify($password_from_form, $user->password)){
             $_SESSION['user_id'] = $user->user_id;
             header('location: index.php');
 //            echo 'jaaaat zenne we zen binne';
@@ -40,9 +40,10 @@
    <section>
        <form method="POST">
            <label for="">email <input type="text" name="email"></label>
-           <label for="">password <input type="text" name="password"></label>
+           <label for="">password <input type="password" name="password"></label>
            <button type="submit">login</button>
        </form>
+       no account ? <a href="register.php">Register</a>
    </section>
 
 </body>
