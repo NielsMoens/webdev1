@@ -6,7 +6,7 @@
         $email = $_POST['email'];
         $password = $_POST['password'];
         $firstname = $_POST['firstname'] ?? 'little';
-        $lastname = $_POST['lastname']?? 'shit';
+        $lastname = $_POST['lastname'] ?? 'shit';
 
 
         $sql = 'SELECT COUNT(*) as "total" FROM `user` WHERE `email` = :email';
@@ -38,7 +38,7 @@
         } else {
             echo 'email already exists';
         }
-    }   
+    }
 ?>
 <!DOCTYPE html>
 <html lang="en">
