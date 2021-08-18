@@ -72,6 +72,7 @@
             <?php
             foreach ($movies as $movie){
                 include BASE_DIR . '/views/movie/_partials/movie_list_item.php';
+//
             }
             ?>
         </div>

@@ -1,11 +1,11 @@
 <?php
 // convert array to object
 $movie = (object) $movie;
-print_r($movie)
+
 ?>
 
-<a href="movie/1" class="movie">
-    <img src="" alt="">
-    <h2><?=  $movie- ?></h2>
-    <p></p>
+<a href="movie/detail/<?= $movie->movie_id ?>" class="movie">
+    <img src="<?= $movie->photo; ?>" alt="">
+    <h2><?=  $movie->title ?></h2>
+    <p><?= substr($movie->description, 0, 100) ?> ...</p>
 </a>
