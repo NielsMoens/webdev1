@@ -20,16 +20,15 @@
             <img src="<?= $movie->photo; ?>" alt="">
         </div>
         <div class="content">
-            <h2><?= $movie->title; ?></h2>
-            <p><?= $movie->description; ?> </p>
+            <h2><?= $movie->title; ?> </h2>
+            <h3>Bestel tickets voor <?= $schedule->start_date ?> </h3>
 
-            <h3>kies een tijdstipken</h3>
-            <ul>
-                <?php foreach ($schedule as $item) : ?>
-                    <li><a href="/webdev1/exMVCkinepolis/movie/schedule/<?= $item['schedule_id']; ?>"><?= $item['start_date']; ?></a></li>
-                <?php endforeach; ?>
-            </ul>
-
+            <form method="POST" action="/webdev1/exMVCkinepolis/movie/order/">
+                <p><label for="firstname">voornaam</label><input type="text" name="firstname" id="firstname"></p>
+                <p><label for="lastname">naam</label><input type="text" name="lastname" id="lastname"></p>
+                <p><label for="email">naam</label><input type="email" name="email" id="email"></p>
+                <button type="submit">koop tickets</button>
+            </form>
         </div>
     </div>
 

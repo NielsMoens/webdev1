@@ -8,6 +8,7 @@ class Movie{
         $pdo_statement->execute( );
         return $pdo_statement->fetchAll();
     }
+
     public static function getById( $id ){
         global $db;
 
@@ -16,5 +17,4 @@ class Movie{
         $pdo_statement->execute( [':movie_id' => $id]);
         return $pdo_statement->fetchObject();
     }
-
 }
