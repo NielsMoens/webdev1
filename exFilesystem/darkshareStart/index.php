@@ -4,6 +4,18 @@ include_once 'functions.php';
 
 $items = scandir(UPLOAD_PATH);
 
+$view = 'list';
+
+if(isset($_COOKIE['view'])){
+    $view=$_COOKIE['view'];
+}
+
+echo $view;
+if (isset($_GET)){
+    $view = $_GET['view'];
+    setcookie('view', $view, time() + 60*60*24*30);
+}
+
 ?>
 
 <!DOCTYPE html>
@@ -37,7 +49,7 @@ $items = scandir(UPLOAD_PATH);
             <a href="?view=grid">grid</a>
         </div>
     </div>
-    <div class="file-list list"> <!-- or grid as class -->
+    <div class="file-list <?= $view; ?>>"> <!-- or grid as class -->
         <?php
             foreach ($items as $item) {
                 include 'views/file.php';

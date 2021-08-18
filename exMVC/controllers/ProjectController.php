@@ -1,5 +1,6 @@
 <?php
 
+require_once 'models/ProjectModel.php';
 class ProjectController{
     function index(){
         echo "index list of projects";

@@ -1,0 +1,14 @@
+<IfModule mod_rewrite.c>
+#    URL Rewrite starten
+    RewriteEngine On
+
+    #Checks to see if the user is attempting to access a valid file,
+    #such as an image or css document, if this isn't true it sends the
+    #request to index.php
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteCond %{REQUEST_FILENAME} !-l
+
+    # alle overblijvende urls worden doorgestuurd naar de index.php
+    RewriteRule ^(.*)$ index.php?url=1 [QSA,L]
+</IfModule>
