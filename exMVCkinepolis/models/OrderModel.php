@@ -20,7 +20,7 @@ class Order{
         foreach ($data['seats'] as $seat ){
             $stmnt->execute([
                 ':order_id'=>$order_id,
-                ':schedule_id'=>0,
+                ':schedule_id'=>$data['schedule_id'],
                 ':seat'=> $seat
             ]);
         }

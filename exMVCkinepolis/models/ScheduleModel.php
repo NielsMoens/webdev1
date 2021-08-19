@@ -30,4 +30,14 @@ class Schedule{
         $pdo_statement->execute( [':schedule_id' => $id]);
         return $pdo_statement->fetchObject();
     }
+
+    public static function getOrderedSeatsById( $id ){
+        global $db;
+
+        $sql = 'SELECT seat FROM `order_detail`
+                WHERE `schedule_id` = :schedule_id';
+        $pdo_statement = $db->prepare($sql);
+        $pdo_statement->execute( [':schedule_id' => $id]);
+        return $pdo_statement->fetchAll(PDO::FETCH_COLUMN, 0);
+    }
 }

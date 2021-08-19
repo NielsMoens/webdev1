@@ -27,6 +27,8 @@ class MovieController{
 
         $schedule = Schedule::getById($id);
         $movie = Movie::getById( $schedule->movie_id );
+        $ordered_seats = Schedule::getOrderedSeatsById($id);
+
 
         include 'views/movie/schedule.php';
     }
@@ -40,9 +42,7 @@ class MovieController{
             $data['lastname'] = $_POST['lastname'] ?? '';
             $data['email'] = $_POST['email'];
             $data['seats'] = $_POST['seats'];
-
-            var_dump($data);
-
+            $data['schedule_id'] = $_POST['schedule_id'];
 
             $order_id = Order::save( $data );
 

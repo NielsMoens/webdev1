@@ -29,7 +29,12 @@
                             echo '<div class="row">';
                             echo '<span>'. $row . '</span>';
                             for ($seat = 1; $seat <=$schedule->seats; $seat++){
-                                echo '<input type="checkbox" name="seats[]" value="' . $row . ';' . $seat . '" class="seat">';
+                                $seat_ref=$row . ';' . $seat;
+                                if (in_array($seat_ref, $ordered_seats)){
+                                    echo '<div class="seat seat-ordered"></div>';
+                                } else {
+                                    echo '<input type="checkbox" name="seats[]" value="'. $seat_ref .'" class="seat">';
+                                }
                             }
                             echo '</div>';
                         }
