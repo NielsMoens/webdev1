@@ -32,13 +32,17 @@ class MovieController{
     }
 
     function order(){
-        if ( !empty($_POST['email'])){
+        if ( !empty($_POST['email']) && isset($_POST['seats'])){
 
             $data = [];
 
             $data['firstname'] = $_POST['firstname'] ?? '';
             $data['lastname'] = $_POST['lastname'] ?? '';
             $data['email'] = $_POST['email'];
+            $data['seats'] = $_POST['seats'];
+
+            var_dump($data);
+
 
             $order_id = Order::save( $data );
 
@@ -48,7 +52,7 @@ class MovieController{
                 echo 'aiaiaiaia da ziet er niet goed u vriendschap, bestelling mislukt';
             }
         } else {
-            $er_message = 'das hier gene justen email eh vriend ';
+            $er_message = 'Niet alle gegevens werden in gevult';
         }
 
         if(!empty($er_message)){

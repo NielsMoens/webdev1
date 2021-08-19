@@ -12,7 +12,9 @@ class Schedule{
     public static function getAllMovieId( $movie_id ){
         global $db;
 
-        $sql = 'SELECT * FROM `schedule` WHERE `movie_id` = :movie_id';
+        $sql = 'SELECT * FROM `schedule` 
+                INNER JOIN `room` ON `schedule`.`room_id` = `room`.`room_id`
+                WHERE `movie_id` = :movie_id';
         $pdo_statement = $db->prepare($sql);
         $pdo_statement->execute( [':movie_id' => $movie_id]);
         return $pdo_statement->fetchAll();
@@ -21,7 +23,9 @@ class Schedule{
     public static function getById( $id ){
         global $db;
 
-        $sql = 'SELECT * FROM `schedule` WHERE `schedule_id` = :schedule_id';
+        $sql = 'SELECT * FROM `schedule` 
+                INNER JOIN `room` ON `schedule`.`room_id` = `room`.`room_id`
+                WHERE `schedule_id` = :schedule_id';
         $pdo_statement = $db->prepare($sql);
         $pdo_statement->execute( [':schedule_id' => $id]);
         return $pdo_statement->fetchObject();

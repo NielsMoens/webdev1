@@ -21,12 +21,25 @@
         </div>
         <div class="content">
             <h2><?= $movie->title; ?> </h2>
-            <h3>Bestel tickets voor <?= $schedule->start_date ?> </h3>
-
+            <h3>Bestel tickets voor <?= $schedule->start_date ?> in <?= $schedule->name ?> </h3>
             <form method="POST" action="/webdev1/exMVCkinepolis/movie/order/">
+                <div class="seats">
+                    <?php
+                        for ($row= $schedule->rows; $row> 0; $row--){
+                            echo '<div class="row">';
+                            echo '<span>'. $row . '</span>';
+                            for ($seat = 1; $seat <=$schedule->seats; $seat++){
+                                echo '<input type="checkbox" name="seats[]" value="' . $row . ';' . $seat . '" class="seat">';
+                            }
+                            echo '</div>';
+                        }
+                    ?>
+                </div>
+
                 <p><label for="firstname">voornaam</label><input type="text" name="firstname" id="firstname"></p>
                 <p><label for="lastname">naam</label><input type="text" name="lastname" id="lastname"></p>
-                <p><label for="email">naam</label><input type="email" name="email" id="email"></p>
+                <p><label for="email">email</label><input type="email" name="email" id="email"></p>
+                <input type="hidden" name="schedule_id" value="<?= $schedule->schedule_id?>">
                 <button type="submit">koop tickets</button>
             </form>
         </div>
