@@ -8,7 +8,6 @@
         $firstname = $_POST['firstname'] ?? 'little';
         $lastname = $_POST['lastname'] ?? 'shit';
 
-
         $sql = 'SELECT COUNT(*) as "total" FROM `user` WHERE `email` = :email';
         $pdo_statement = $db->prepare($sql);
         $pdo_statement->execute( [ ':email' => $email ] );

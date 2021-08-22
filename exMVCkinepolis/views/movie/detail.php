@@ -26,8 +26,7 @@
             <h3>kies een tijdstipken</h3>
             <ul>
                 <?php foreach ($schedule as $item) :
-//                    print_r($item);
-                    ?>
+                   print_r($item) ?>
                     <li>
                         <a href="/webdev1/exMVCkinepolis/movie/schedule/<?= $item['schedule_id']; ?>">
                             <?= $item['start_date']; ?> - <?= $item['name']; ?>

@@ -37,7 +37,6 @@ class MovieController{
         if ( !empty($_POST['email']) && isset($_POST['seats'])){
 
             $data = [];
-
             $data['firstname'] = $_POST['firstname'] ?? '';
             $data['lastname'] = $_POST['lastname'] ?? '';
             $data['email'] = $_POST['email'];

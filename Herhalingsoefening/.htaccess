@@ -1,0 +1,15 @@
+<IfModule mod_rewrite.c>    
+    
+    /* URL Rewrite starten */
+    Options +FollowSymLinks
+    RewriteEngine On
+    
+    /* Condities toevoegen: Indien url geen bestand, map of link is mag er door gegaan worden naar de volgend regel(s) */
+    RewriteCond %{REQUEST_URI} !-f
+    RewriteCond %{REQUEST_URI} !-d
+    RewriteCond %{REQUEST_URI} !-l
+
+    /* Alle overblijvende urls worden doorgestuurd naar de index.php en daarbij wordt de url toegevoegd in de querystring */
+    RewriteRule ^(.*)$ index.php?url=$1 [QSA,L]
+
+</IfModule>

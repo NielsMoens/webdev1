@@ -3,10 +3,11 @@ class Order{
     public static function save($data){
         global $db;
 
+        print_r($_POST);
         $order_data = [];
-        $order_data['firstname']= date('firstname');
-        $order_data['lastname']= date('lastname');
-        $order_data['email']= date('email');
+        $order_data['firstname']= $data ['firstname'];
+        $order_data['lastname']= $data['lastname'];
+        $order_data['email']= $data['email'];
         $order_data['date']= date('Y-m-d H:i:s');
 
         $sql = "INSERT INTO `order`(firstname, lastname, email, date) VALUES (:firstname, :lastname, :email, :date)";
