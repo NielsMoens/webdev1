@@ -23,9 +23,9 @@ class User  {
     public static function login( $email, $password ) {
         $user =  self::getByEmail($email);
 
-        if($user && $password === $user->password ) {
-        // if($user && password_verify($password, $user->password) ) {
-            //return user if login is ok;
+//        if($user && $password === $user->password ) {
+         if($user && password_verify($password, $user->password) ) {
+
             return $user;
         } 
 
