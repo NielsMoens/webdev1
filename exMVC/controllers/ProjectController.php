@@ -13,7 +13,7 @@ class ProjectController{
         return $result;
     }
     function detail($id = 0){
-        echo "detail page zot eh " . $id ;
+        echo " detail page zot eh " . $id ;
 
         //sql here
 

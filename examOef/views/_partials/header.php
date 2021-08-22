@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Pixels</title>
+    <link rel="stylesheet" href="/fontello/css/fontello.css">
+    <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+    <header>
+        <a href="index.html" class="brand">Pixels</a>
+        <form>
+            <input type="text" name="q" placeholder="What do you want to see?">
+            <button type="submit" class="btn"><i class="demo-icon icon-search"></i></button>
+        </form>
+        <nav>
+            <!-- Items enkel indien niet ingelogd
+<a href="login.html">Inloggen</a>-->
+            <!-- Items enkel indien ingelogd -->
+            <a href="add.html">Upload</a>
+            <a href="index.html">Mijn fotos</a>
+            <a href="logout.html">Uitloggen</a>
+        </nav>
+    </header>
