@@ -24,10 +24,6 @@ if (file_exists($controller_path)) {
     //dynamic controller an example could be: $controller_name === new ProjectController();
     $controller_class = new $controller_name();
 
-    print_r($method . ' ');
-    print_r($path);
-    print_r($param);
-    print_r($server);
     if (method_exists($controller_class, $method)) {
         $controller_class->$method($param);
     } else {

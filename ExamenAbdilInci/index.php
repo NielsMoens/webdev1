@@ -2,7 +2,7 @@
 session_start();
 
 require_once 'config.php';
-require_once 'lib/db.php';
+require_once 'libs/db.php';
 require_once 'models/UserModel.php';
 
 // Ingelogde gebruiker ophalen uit de session
@@ -18,7 +18,7 @@ if (substr($request, 0, strlen(URI)) == URI) {
 
 $path = explode('/', $request);
 
-$controller = ( !empty($path[0]) ) ? ucfirst(strtolower($path[0])) : 'Photo';
+$controller = ( !empty($path[0]) ) ? ucfirst(strtolower($path[0])) : 'Vaccin';
 $method = ( !empty($path[1]) ) ? strtolower($path[1]) : 'index';
 $param = ( !empty($path[2]) ) ? $path[2] : null;
 

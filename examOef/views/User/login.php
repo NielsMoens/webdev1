@@ -15,4 +15,5 @@
             <input type="submit" value="Inloggen">
         </div>
     </form>
+    Heb je nog geen account? <a href="<?= URI ?>user/register">Register here.</a>
 </section>

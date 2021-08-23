@@ -2,13 +2,12 @@
 
 require_once 'models/UserModel.php';
 
-class UserController{
+class UserController {
 
     private static $views_path = 'views/User/';
 
-    public function index(){
-        echo "index";
-
+    public function index() {
+        // voorlopig nog niets...
     }
 
     public function login() {
@@ -17,18 +16,18 @@ class UserController{
             if($user !== false) {
                 $_SESSION['user_id'] = $user->user_id;
                 header('location: ' . URI);
-            }
+            } 
         }
 
         include self::$views_path . 'login.php';
     }
-    function register(){
-        echo "register page page zot eh " ;
+
+    public function register() {
         if(isset($_POST['email']) && isset($_POST['password'])){
             $email = $_POST['email'];
             $password = $_POST['password'];
-            $firstname = $_POST['firstname'] ?? 'Fons';
-            $lastname = $_POST['lastname'] ?? 'Makker';
+            $firstname = $_POST['firstname'] ?? 'John';
+            $lastname = $_POST['lastname'] ?? 'Doe';
 
             $user_id = User::register( $firstname, $lastname, $email, $password );
             if($user !== false) {

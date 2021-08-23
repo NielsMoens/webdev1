@@ -1,17 +1,16 @@
 <section class="form">
         <h1>Voeg een foto toe</h1>
-        <form>
+        <form method="post" enctype="multipart/form-data">
             <div class="form-input">
-                <label>Foto</label>
-                <input type="file">
+                <label for="my_image">Foto</label>
+            <input type="file" id="my_image" name="my_image">
             </div>
             <div class="form-input">
-                <label>Titel</label>
-                <input type="text">
+                <label for="title">Titel</label>
+                <input type="text" id="title" name="title">
             </div>
             <div class="form-input">
-                <label></label>
-                <input type="submit" value="Voeg toe">
+                <input type="submit" name="submit" value="Voeg toe">
             </div>
         </form>
     </section>

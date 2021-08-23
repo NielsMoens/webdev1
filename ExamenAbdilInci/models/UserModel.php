@@ -10,36 +10,36 @@ class User  {
         $pdo_statement->execute( [ ':id' => $id ] );
         return $pdo_statement->fetchObject();
     }
-
+    
     public static function getByEmail( $email ) {
         global $db;
+
         $sql = 'SELECT * FROM `user` WHERE `email` = :email';
         $pdo_statement = $db->prepare($sql);
         $pdo_statement->execute( [ ':email' => $email ] );
         return $pdo_statement->fetchObject();
-
     }
 
     public static function login( $email, $password ) {
-        $user = self::getByEmail($email);
-        if($user && $password === $user->password ) {
-//        if($user && password_verify($password, $user->password) ) {
+        $user =  self::getByEmail($email);
 
+        if($user && password_verify($password, $user->password) ) {
+            //return user if login is ok;
             return $user;
-        }
+        } 
 
         return false;
     }
 
     public static function register($firstname, $lastname, $email, $password) {
         global $db;
-        // check if email is no already registered
         $sql = 'SELECT COUNT(*) AS "total" FROM `user` WHERE `email` = :email';
         $pdo_statement = $db->prepare($sql);
         $pdo_statement->execute( [ ':email' => $email ] );
         $total =  $pdo_statement->fetchColumn();
 
         if( $total == 0) {
+
             $sql = 'INSERT INTO `user` 
                     (firstname, lastname, email, password, creation_date) VALUES 
                     (:firstname, :lastname, :email, :password, :creation_date);';
@@ -55,13 +55,11 @@ class User  {
             $user_id = $db->lastInsertId();
             if($user_id) {
                 return $user_id;
-            }
-        } else {
-            echo 'This email is already registered to an account';
-        }
+            } 
+        } 
 
         return false;
     }
-
+    
 
 }
