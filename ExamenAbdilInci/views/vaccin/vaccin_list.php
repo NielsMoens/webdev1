@@ -13,6 +13,7 @@
 <?php
 
 foreach($vaccins as $vaccin) {
+
     include BASE_DIR . '/views/_partials/vaccin_list_item.php';
 }
 

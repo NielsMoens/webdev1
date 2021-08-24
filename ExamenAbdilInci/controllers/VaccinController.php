@@ -5,7 +5,6 @@ require_once 'models/OrderModel.php';
 
 
 class VaccinController {
-
     public function index() {
 
         $vaccins = Vaccin::getAll();
@@ -26,10 +25,10 @@ class VaccinController {
     }
 
     public function detail($id) {
-        
+        print_r($id);
         $vaccin = Vaccin::getById( $id );
     
-        // $order = Order::getAllByCenterId($id);
+//         $order = Order::getAllByCenterId($id);
 
         include 'views/vaccin/detail.php';
     }

@@ -14,7 +14,7 @@
 
 </head>
 <body>
-<section>
+<section
     <div class="movie_detail">
         <div class="image">
             <img src="<?= $movie->photo; ?>" alt="">
@@ -22,7 +22,7 @@
         <div class="content">
             <h2><?= $movie->title; ?> </h2>
             <h3>Bestel tickets voor <?= $schedule->start_date ?> in <?= $schedule->name ?> </h3>
-            <form method="POST" action="/webdev1/exMVCkinepolis/movie/order/">
+            <form method="POST" action="/movie/order/">
                 <div class="seats">
                     <?php
                         for ($row= $schedule->rows; $row> 0; $row--){

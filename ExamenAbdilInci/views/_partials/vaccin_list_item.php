@@ -2,7 +2,6 @@
 
 $vaccin = (object) $vaccin;
 
-
 ?>
 
 
