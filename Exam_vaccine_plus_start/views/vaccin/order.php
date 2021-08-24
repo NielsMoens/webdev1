@@ -5,11 +5,10 @@
     Lucien Matthyslaan 9<br>
     9800 Deinze</p>
 
-
 <h2>Reserveer een vaccin</h2>
 
 
-<form method="post" action="<?= URI ?>vaccin/order/">
+<form method="post"  >
     <label for="claimer">
         <span>Naam</span>
         <input type="text" name="claimer" id="claimer" required>
@@ -24,7 +23,7 @@
     </label>
     <label>
         <span></span>
-        <div><a href="views/vaccin/claimed.php"></a><button type="submit" class="btn btn-primary" name="claim" >Reserveren</button>
+        <div><button type="submit" class="btn btn-primary" name="claim">Reserveren</button>
         <a href="<?= URI ?>vaccin/detail">Annuleren</a>
         </div>
     </label>

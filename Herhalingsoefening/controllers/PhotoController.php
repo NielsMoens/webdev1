@@ -25,6 +25,8 @@ class PhotoController {
 
     }
     public function upload() {
+
+
         if(isset($_POST['title']) && isset($_FILES['my_image'])){
 
             $img_title = $_POST['title'];

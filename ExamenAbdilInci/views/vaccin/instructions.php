@@ -1,6 +1,6 @@
 <section><h1>Instructies voor bezoekers <span class="badge">Brielpoort, Deinze</span></h1>
 
-    <div class="error">Er is nog geen instructie PDF voor Brielpoort, Deinze opgeladen.</div>
+
     <form method="POST" enctype="multipart/form-data">
    
     <h3>Instructies opladen</h3>

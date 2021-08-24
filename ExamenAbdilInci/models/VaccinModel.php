@@ -28,14 +28,10 @@ class Vaccin {
     public static function getVaccin() {
         global $db;
 
-        $sql = 'select * from vaccin
-        group by vaccin_id
-        having count(*) = 1
-        order by vaccin_id desc ';
+        $sql = 'select * from vaccin order by vaccin_id desc ';
         $sql_statement = $db->prepare($sql);
         $sql_statement->execute();
         return $sql_statement->fetchAll();
-
     }
 
     
